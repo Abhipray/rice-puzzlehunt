@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rice Puzzle Hunt</title>
+
+    <!-- font-awesome -->
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 7]>
+    <link href="static/css/font-awesome-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- custom CSS -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/stylesheet.css" rel="stylesheet">
+
+    <!--[if lte IE 8]>
+    <link href="static/css/ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link href="static/css/ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="static/js/plugins.js"></script>
+    <!--[if lte IE 7]>
+    <script type="text/javascript" src="static/js/boxsizing/jquery.boxsizing.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="static/js/banzhow.js"></script>
+  </head>
+
+  <body>
+
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
+      <!--<div class="navbar-inner">-->
+        <!--<div class="container">-->
+          <!--<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+          <!--</a>-->
+          <!--<a class="brand" href="/main.html">Rice PuzzleHunt</a>-->
+          <!--<div class="nav-collapse collapse">-->
+            <!--<ul class="nav">-->
+              <!--&lt;!&ndash; <li class="active"><a href="http://twitter.github.com/bootstrap/examples/starter-template.html#">Home</a></li> &ndash;&gt;-->
+              <!--&lt;!&ndash; <li><a href="http://twitter.github.com/bootstrap/examples/starter-template.html#about">About</a></li> &ndash;&gt;-->
+              <!--&lt;!&ndash; <li><a href="http://twitter.github.com/bootstrap/examples/starter-template.html#contact">Contact</a></li> &ndash;&gt;-->
+            <!--</ul>-->
+          <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href = index.html><img src="static/img/ieee.gif" alt="“IEEE" style="width:45px;height:45px"></a>
+	  <a class="navbar-brand" href = index.html>Rice Puzzle Hunt</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {% if navbar['home'] %}
+             <li class="active">
+            {% else %}
+             <li>
+            {% endif %}<a href="/main">Home</a></li>
+
+              {% if navbar['rules'] %}
+             <li class="active">
+            {% else %}
+             <li>
+            {% endif %}<a href="/rules">Rules</a></li>
+
+              {% if navbar['faq'] %}
+             <li class="active">
+            {% else %}
+             <li>
+            {% endif %}<a href="/FAQ">FAQ</a></li>
+
+              {% if navbar['leaderboard'] %}
+             <li class="active">
+            {% else %}
+             <li>
+            {% endif %}<a href="/leaderboard">Leaderboard</a></li>
+
+              {% if navbar['puzzles'] %}
+             <li class="active">
+            {% else %}
+             <li>
+            {% endif %}<a href="/allpuzzles">Puzzles</a></li>
+
+            {% if navbar['logged_in'] %}
+            <li><img src="static/img/user.gif" alt="user" style="width:45px;height:45px"></li>
+            <li><a href="/leaderboard" id="name_score">{{navbar['team_name']}} | {{navbar['team_score']}}</a></li>
+        {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    {{ content }}
+   <!--<footer></footer>-->
+  <div class="footer-after">
+      <div class="container">
+        <div class="row">
+          <p class="col-md-10">©2014 All rights reserved. Webapp created by Abhipray Sahoo. Design by Akhil Surapaneni & Spencer Kent.</p>
+        </div><!-- /.row -->
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class= "fill" style="background-image:url('static/img/batman.jpg'); background-repeat:no-repeat; background-attachment:fixed; opacity: 50; max-height: 45%;">
+</div>
+        <div class="page-header" style="margin-left: auto; margin-right: auto;text-align:center;">
+  <h1>Leaderboard</h1>
+</div>
+<div class="jumbotron">
+<div class="container-narrow2">
+<table class="table table-bordered">
+    <tr>
+            <th>Rank</th>
+            <th>Team Name</th>
+            <th>Score</th>
+    </tr>
+    {% for user in teams %}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{user['team_name']}}</td>
+        <td>{{user['team_score']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+ </div>

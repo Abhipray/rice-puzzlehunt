@@ -1,0 +1,42 @@
+<script>
+    var puzzleNum = {{puzzleNum}}
+</script>
+<div class= "fill" style="background-image:url('static/img/superman.jpg'); background-repeat:no-repeat; background-attachment:fixed; opacity: 50; max-height: 45%;">
+</div>
+        <div class="page-header" style="margin-left: auto; margin-right: auto;text-align:center;">
+  <h1>Your Answer</h1>
+</div>
+
+<div class="container-narrow">
+<div class="jumbotron">
+
+  <form class="form-horizontal well container-narrow">
+    <fieldset>
+      <legend>{{puzzleTitle}}</legend>
+        <!--<label>Title</label>-->
+        <!--<input id="input-title" type="text" class="span3">-->
+        <!--<label>Your Answer</label>-->
+        <label>Max 5 Attempts</label>
+        <!--<textarea id="input-text" class="span3 sticky" rows="2" placeholder="Your answer..."></textarea>-->
+        <input id="input-text" type="text" placeholder="Your answer..."> </input>
+      <button id="add-button" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+
+   <div id="attempts">
+    {% for attempt in attempts %}
+      {% if attempt['correctness'] %}
+        <div class="alert alert-success" data-id="{{ attempt['attempt_str'] }}">
+      {% else %}
+        <div class="alert alert-danger" data-id="{{ attempt['attempt_str'] }}">
+      {% endif %}
+            <h4>{{ attempt['attempt_str'] }}</h4>
+            <h4>{{ attempt['time_added'] }}</h4>
+        </div>
+    {% endfor %}
+  </div>
+
+</div> <!-- /container -->
+    </div>
+
+<script src="/static/js/stickies.js"></script>

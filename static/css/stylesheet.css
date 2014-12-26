@@ -1,0 +1,33 @@
+
+
+.container-narrow {
+    margin: 0 auto;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.container-narrow2 {
+    margin: 0 auto;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.wow {
+    text-align: center;
+}
+
+.sticky {
+}
+
+#add-button {
+    margin-top: 10px;
+    float: right;
+}
+
+.backgndimg
+{
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+}
